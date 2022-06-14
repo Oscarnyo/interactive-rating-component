@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+--White: hsl(0, 0%, 100%);
+--Light-Grey: hsl(217, 12%, 63%);
+--Medium-Grey: hsl(216, 12%, 54%);
+--Dark-Blue: hsl(213, 19%, 18%);
+--Very-Dark-Blue: hsl(216, 12%, 8%);
+--Orange: hsl(25, 97%, 53%);
+}
+
+body{
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
+    background-color: var(--Very-Dark-Blue);
+}
+
+.container{
+    margin: 0 auto;
+    margin-top: 200px;
+    padding: 0;
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+    width: 400px;
+    height: 400px;
+    text-align: left;
+    border-radius: 8%;
+}
+
+.rating-state{
+    margin: 30px;
+}
+
+.rating-state img{
+    margin: 50px 0px 30px 20px;
+}
+
+.rating-state p{
+    font-size: 15px;
+    color: var(--Light-Grey);
+    margin: 10px 0px 10px 0px;
+    line-height: 15pt;
+}
+
+.form {
+    width: 100%;
+}
+
+.form div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form__radio-input {
+    display: none;
+}
+
+.form__radio-label {
+    cursor: pointer;
+    margin-right: 55px;
+    margin-bottom: 50px;
+}
+
+.form__radio-button {
+    height: 50px;
+    width: 50px;
+    background-color: hsl(213, 19%, 18%, 0.9);
+    border-radius: 100%;
+    position: absolute;
+    transition: background-color 0.2s;
+}
+
+.form__radio-button::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--Light-Grey);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.form__radio-button div {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: hsl(0, 0%, 100%);
+    font-weight: 400;
+    z-index: 2;
+}
+
+.form__radio-button:hover {
+    background-color: var(--Orange);
+}
+
+.form__radio-input:checked~.form__radio-label .form__radio-button::after {
+    opacity: 1;
+}
+
